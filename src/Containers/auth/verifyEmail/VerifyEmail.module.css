@@ -1,0 +1,17 @@
+.Wrapper {
+  max-width: 70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 8rem;
+  width: 100%;
+  border-radius: 0.3rem;
+  margin: 0 auto;
+  transition: all 0.2s;
+  box-shadow: 0rem 0.5rem 1.5rem var(--shadow);
+}
+
+.textWrapper {
+  margin-bottom: 20px;
+}
