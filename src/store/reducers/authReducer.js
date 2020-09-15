@@ -1,56 +1,56 @@
 import * as actionTypes from '../actions/actionTypes'
-import { updateObject } from '../../Hoc/utility/updateObject'
+import {updateObject} from '../../Hoc/utility/updateObject'
 
 const initialState = {
   profile: {
     error: null,
-    loading: false
+    loading: false,
   },
   verificationEmail: {
     error: null,
-    loading: false
+    loading: false,
   },
   passwordRecovery: {
     error: null,
-    loading: false
+    loading: false,
   },
   deleteUser: {
     error: null,
-    loading: false
+    loading: false,
   },
   error: null,
-  loading: false
+  loading: false,
 }
 
 const authSuccess = (state) => {
-  return updateObject(state, { error: null })
+  return updateObject(state, {error: null})
 }
 
 const authFail = (state, payload) => {
-  return updateObject(state, { error: payload })
+  return updateObject(state, {error: payload})
 }
 
 const authStart = (state) => {
-  return updateObject(state, { loading: true, error: null })
+  return updateObject(state, {loading: true, error: null})
 }
 
 const authEnd = (state) => {
-  return updateObject(state, { loading: false })
+  return updateObject(state, {loading: false})
 }
 
 const signUpSuccess = (state) => {
-  return updateObject(state, { error: null })
+  return updateObject(state, {error: null})
 }
 
 const signUpFail = (state, payload) => {
-  return updateObject(state, { error: payload })
+  return updateObject(state, {error: payload})
 }
 
 const editProfileStart = (state) => {
   return updateObject(state, {
     profile: updateObject(state.profile, {
-      loading: true
-    })
+      loading: true,
+    }),
   })
 }
 
@@ -58,8 +58,8 @@ const editProfileSuccess = (state) => {
   return updateObject(state, {
     profile: updateObject(state.profile, {
       error: false,
-      loading: false
-    })
+      loading: false,
+    }),
   })
 }
 
@@ -67,16 +67,16 @@ const editProfileFail = (state, payload) => {
   return updateObject(state, {
     profile: updateObject(state.profile, {
       error: payload,
-      loading: false
-    })
+      loading: false,
+    }),
   })
 }
 
 const verificationEmailStart = (state) => {
   return updateObject(state, {
     verificationEmail: updateObject(state.verificationEmail, {
-      loading: true
-    })
+      loading: true,
+    }),
   })
 }
 
@@ -84,8 +84,8 @@ const verificationEmailSuccess = (state) => {
   return updateObject(state, {
     verificationEmail: updateObject(state.verificationEmail, {
       error: false,
-      loading: false
-    })
+      loading: false,
+    }),
   })
 }
 
@@ -93,16 +93,16 @@ const verificationEmailFail = (state, payload) => {
   return updateObject(state, {
     verificationEmail: updateObject(state.verificationEmail, {
       error: payload,
-      loading: false
-    })
+      loading: false,
+    }),
   })
 }
 
 const recoverPasswordStart = (state) => {
   return updateObject(state, {
     passwordRecovery: updateObject(state.passwordRecovery, {
-      loading: true
-    })
+      loading: true,
+    }),
   })
 }
 
@@ -110,8 +110,8 @@ const recoverPasswordSuccess = (state) => {
   return updateObject(state, {
     passwordRecovery: updateObject(state.passwordRecovery, {
       error: false,
-      loading: false
-    })
+      loading: false,
+    }),
   })
 }
 
@@ -119,20 +119,20 @@ const recoverPasswordFail = (state, payload) => {
   return updateObject(state, {
     passwordRecovery: updateObject(state.passwordRecovery, {
       error: payload,
-      loading: false
-    })
+      loading: false,
+    }),
   })
 }
 
 const userDeleteStart = (state) => {
   return updateObject(state, {
-    deleteUser: updateObject(state.deleteUser, { loading: true })
+    deleteUser: updateObject(state.deleteUser, {loading: true}),
   })
 }
 
 const userDeleteSuccess = (state) => {
   return updateObject(state, {
-    deleteUser: updateObject(state.deleteUser, { loading: false, error: null })
+    deleteUser: updateObject(state.deleteUser, {loading: false, error: null}),
   })
 }
 
@@ -140,28 +140,28 @@ const userDeleteFail = (state, payload) => {
   return updateObject(state, {
     deleteUser: updateObject(state.deleteUser, {
       loading: false,
-      error: payload
-    })
+      error: payload,
+    }),
   })
 }
 
 const clear = (state) => {
   return updateObject(state, {
     profile: updateObject(state.profile, {
-      error: null
+      error: null,
     }),
     verificationEmail: updateObject(state.verificationEmail, {
-      error: null
+      error: null,
     }),
     passwordRecovery: updateObject(state.passwordRecovery, {
-      error: null
+      error: null,
     }),
-    deleteUser: updateObject(state.deleteUser, { error: null }),
-    error: null
+    deleteUser: updateObject(state.deleteUser, {error: null}),
+    error: null,
   })
 }
 
-export default (state = initialState, { type, payload }) => {
+export default (state = initialState, {type, payload}) => {
   switch (type) {
     case actionTypes.AUTH_SUCCESS:
       return authSuccess(state)

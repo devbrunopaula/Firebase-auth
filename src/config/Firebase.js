@@ -12,12 +12,12 @@ import 'firebase/auth'
 // }
 
 const config1 = {
-  apiKey: 'AIzaSyCH6jaNYtC2lRwBpZs5kywwjlpih705W1E',
-  authDomain: 'react-login-f515c.firebaseapp.com',
-  databaseURL: 'https://react-login-f515c.firebaseio.com',
-  projectId: 'react-login-f515c',
-  storageBucket: 'react-login-f515c.appspot.com',
-  messagingSendId: '1:338096054980:web:175ada87646baae8139f91'
+  apiKey: process.env.REACT_APP_APPID,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASEURL,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSendId: process.env.REACT_APP_MESSAGINGSENDERID,
 }
 
 firebase.initializeApp(config1)
